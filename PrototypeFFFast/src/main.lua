@@ -10,7 +10,7 @@ local function main()
     		, shakeFrame	= nil
     		, brakeFrame	= nil
     	}
-    }
+    }  
     
     local spriteTables	= {
     	{x = 169, y = 322, clothKey = 3}
@@ -161,15 +161,15 @@ local function main()
 	    		if value.x-halfWidth < x and value.x+halfWidth > x
 	    		and value.y-halfHeight < y and value.y+halfHeight > y
 	    		then
-		    		if timeCurrent - timeTableClothTouched < 1	-- 1초 안에 떼야 함
+		    		if timeCurrent - timeTableClothTouched < 1	-- 1��� ������ ������ ���
 		    		then
--- 제대로 식탁보를 땡겼을 경우
+-- ��������� ������������ ��������� ������
 						layerBG:removeChild(spriteTableCloths[index], true)
 						currentRemainTableClothCount	= currentRemainTableClothCount - 1
 --						shakeTableObject(index)
 		    			print "Good"
 		    		else
--- 너무 늦게 식탁보를 땡겼을 경우
+-- ������ ������ ������������ ��������� ������
 						boomObjectOverTable(index)
 		    			print "Bad"
 		    		end
